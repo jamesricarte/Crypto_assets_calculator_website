@@ -1,0 +1,941 @@
+* {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(223, 223, 223);
+    justify-content: space-between;
+}
+
+.navbar h2 {
+    margin-left: 10px;
+}
+
+.navbar .site-logo {
+    width: 30px;
+}
+
+.navbar .hamburger-button {
+    width: 40px;
+    display: none;
+}
+
+.navbar .hamburger-button:active {
+    opacity: .5;
+}
+
+.navbar-logos {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.navbar-menus {
+    margin-right: 60px;
+}
+
+.navbar-menus a {
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.navbar-menus button {
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 588px) {
+    .navbar .hamburger-button {
+        display: block;
+    }
+
+    .navbar .site-logo {
+        margin-left: 6px;
+    }
+
+    .navbar h2 {
+        margin-left: 6px;
+        font-size: 20px;
+    }
+
+    .navbar-logos {
+        margin-left: 20px;
+    }
+
+    .navbar-menus {
+        display: none;
+    }
+}
+
+button {
+    background-color: yellow;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.menu-bar .site-logo {
+    width: 30px;
+    margin-left: -3px;
+}
+
+.menu-bar .x-button {
+    width: 30px;
+    margin-left: 18px;
+    scale: 0.5;
+    padding: 5px;
+}
+
+.menu-bar .x-button:active {
+    opacity: .5;
+}
+
+.menu-bar .site-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: 0.8s ease-in-out;
+    display: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.menu-bar.active {
+    transform: translate(0%); 
+}
+
+.menu-bar-buttons {
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.menu-bar h2 {
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+.menu-bar a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 1s ease;
+    pointer-events: none;
+    display: none;
+    z-index: 0;
+}
+
+.overlay.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: initial;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 588px) {
+    .menu-bar {
+        display: flex;
+    }
+    .overlay {
+        display: initial;
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.search-bar img {
+    width: 16px;
+}
+
+.search-bar input {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    padding-left: 43px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar {
+    position: relative;
+    margin-top: 14px;
+    width: 50%;
+    transform: translateX(-21px);
+}
+
+.search-bar img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 1044px) {
+    .search-bar {
+        width: 85%;
+    }
+}
+
+.add-coin {
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-coin input {
+    height: 40px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+    width: 100%;
+    padding-left: 6px;
+}
+
+.add-coin h4 {
+    margin-left: 6px;
+    min-width: 70px;
+}
+
+.add-coin form {
+    display: flex;
+    align-items: center;
+}
+
+.add-coin form div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.add-coin form label {
+    color: rgb(70, 70, 70);
+    background-color: white;
+    padding: 11.7px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-size: 14px;
+    margin-right: 2px;
+    margin-left: 6px;
+}
+
+.add-coin form input:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 1044px) {
+    .add-coin form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .add-coin form div {
+        margin-bottom: 10px;
+    }
+
+    .add-coin {
+        width: initial;
+        flex-direction: column;
+        align-items: initial;
+        width: 80%;
+    }
+
+    .add-coin h4 {
+        margin-bottom: 6px;
+    }
+}
+
+.coins-table {
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 60%;
+    text-decoration: none;
+    color: black;
+}
+
+.coins-table div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.coins-table div img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.coin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.coins-table:active {
+    opacity: 0.5;
+}
+
+.coins-table td {
+    padding: 4px;
+}
+
+.title {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1044px) {
+    .coins-table {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .coin-info.price.info {
+        display: none;
+    }
+
+    .coins-table div img {
+        margin-right: 6px;
+    }
+}
+
+@media only screen and (min-width: 1530px) {
+    .coins-table div {
+        justify-content: center;
+    }
+
+    .coins-table div img {
+        margin-right: 6px;
+    }
+
+    .info {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .coins-table {
+        width: 40%;
+    }
+}
+
+.selected-coin {
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+    width: 60%;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.selected-coin img {
+    width: 32px;
+    margin-right: 5px;
+    padding-bottom: 5px;
+}
+
+.selected-coin div {
+    display: flex;
+    align-items: center;
+}
+
+.selected-coin p {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1044px) {
+    .selected-coin {
+        width: 90%;
+    }
+}
+
+.edit-buttons {
+    margin-top: 20px;
+    width: 60%;
+}
+
+.edit-buttons button {
+    font-size: 12px;
+    width: initial;
+}
+
+@media only screen and (max-width: 1044px) {
+    .edit-buttons {
+        width: 90%;
+    }
+}
+
+hr {
+height: 1px;
+width: 90%;
+background-color:rgb(223, 223, 223);
+border: none;
+
+}
+
+.options button {
+    margin-top: 20px;
+    background-color: rgb(255, 0, 0);
+    font-size: 12px;
+    color: white;
+}
+
+.options button:active {
+    opacity: .5;
+}
+
+.delete-popup {
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    top: 50%;
+    transform: translateY(-400%);
+    transition: 1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.delete-popup p {
+    margin-bottom: 10px;
+    min-width: 180px;
+}
+
+.delete-popup div {
+    min-width: 180px;
+}
+
+.delete-popup.active {
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 1s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.overlay2.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: initial;
+    z-index: 1;
+}
+
+.delete-popup button:active {
+    opacity: .5;
+}
+
+.delete-popup .x-button {
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.delete-popup .x-button:active {
+    opacity: .5;
+}
+
+.sidebar-path .home-page {
+    margin-left: 24px;
+    margin-bottom: 8px;
+}
+
+.sidebar-path .edit-page {
+    margin-left: 48px;
+    margin-bottom: 8px;
+}
+
+.sidebar-path {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.sidebar-path a div {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.sidebar-path div hr {
+    width: 90%;
+    margin: auto;
+}
+
+.sidebar-path .edit-page-div hr{
+    margin-left: 46px;
+    width: 82%;
+}
+
+.logs-table table td{
+    padding: 12px;
+    text-align: center;
+}
+
+.logs-table table th{
+    padding: 6px;
+}
+
+.logs-table table tr {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(223, 223, 223);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgb(223, 223, 223);
+}
+
+.logs-table table {
+    border-collapse: collapse;
+}
+
+.logs-table {
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.logs-table table {
+    width: 100%;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(245, 245, 245);
+}
+
+@media only screen and (max-width: 1044px) {
+.logs-table {
+    width: 90%;
+}
+}
+
+.add-popup {
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    top: 50%;
+    transform: translateY(-400%);
+    transition: 1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.add-popup label {
+    margin-bottom: 10px;
+}
+
+.add-popup input {
+    margin-bottom: 10px;
+}
+
+.add-popup div {
+    min-width: 180px;
+}
+
+.add-popup form input[type=submit] {
+    background-color: yellow;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.add-popup input {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(251, 251, 251);
+    padding-left: 20px;
+}
+
+.add-popup input:focus {
+    outline: none;
+}
+
+.add-popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-popup.active {
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.add-popup .x-button {
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.add-popup input[type=submit]:active {
+    opacity: .5;
+}
+
+.add-popup .x-button:active {
+    opacity: .5;
+}
+
+.deduct-popup {
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    top: 50%;
+    transform: translateY(-400%);
+    transition: 1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.deduct-popup label {
+    margin-bottom: 10px;
+}
+
+.deduct-popup input {
+    margin-bottom: 10px;
+}
+
+.deduct-popup div {
+    min-width: 180px;
+}
+
+.deduct-popup form input[type=submit] {
+    background-color: yellow;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.deduct-popup input {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(251, 251, 251);
+    padding-left: 20px;
+}
+
+.deduct-popup input:focus {
+    outline: none;
+}
+
+.deduct-popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deduct-popup.active {
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.deduct-popup .x-button {
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.deduct-popup input[type=submit]:active {
+    opacity: .5;
+}
+
+.deduct-popup .x-button:active {
+    opacity: .5;
+}
+
+.update-price-popup {
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    top: 50%;
+    transform: translateY(-400%);
+    transition: 1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.update-price-popup label {
+    margin-bottom: 10px;
+}
+
+.update-price-popup input {
+    margin-bottom: 10px;
+}
+
+.update-price-popup div {
+    min-width: 180px;
+}
+
+.update-price-popup form input[type=submit] {
+    background-color: yellow;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.update-price-popup input {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(251, 251, 251);
+    padding-left: 20px;
+}
+
+.update-price-popup input:focus {
+    outline: none;
+}
+
+.update-price-popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-price-popup.active {
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.update-price-popup .x-button {
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.update-price-popup input[type=submit]:active {
+    opacity: .5;
+}
+
+.update-price-popup .x-button:active {
+    opacity: .5;
+}
+
+.new-base-popup {
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    top: 50%;
+    transform: translateY(-400%);
+    transition: 1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.new-base-popup label {
+    margin-bottom: 10px;
+}
+
+.new-base-popup input {
+    margin-bottom: 10px;
+}
+
+.new-base-popup div {
+    min-width: 180px;
+}
+
+.new-base-popup form input[type=submit] {
+    background-color: yellow;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.new-base-popup input {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(251, 251, 251);
+    padding-left: 20px;
+}
+
+.new-base-popup input:focus {
+    outline: none;
+}
+
+.new-base-popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-base-popup.active {
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.new-base-popup .x-button {
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.new-base-popup input[type=submit]:active {
+    opacity: .5;
+}
+
+.new-base-popup .x-button:active {
+    opacity: .5;
+}
+
+.add-button:active, 
+.deduct-button:active, 
+.update-price-button:active, 
+.new-base-button:active {
+    opacity: .5;
+}
+
+button , input[type=submit], .x-button {
+    z-index: 1;
+    cursor: pointer;
+}
+
+.click-icon:active {
+    border-style: solid;
+}
+
+.icon-2 {
+    width: 150px;
+}
+
+.selectors {
+    background-color: rgb(228, 228, 228);
+    border-radius: 8px;
+    width: 350px;
+    transition: .5s;
+    transform: scale(0);
+    transform-origin: bottom left;
+    position: absolute;
+    left: 70px;
+    bottom: 70px;
+}
+
+.selectors.active {
+    transform: scale(1);
+}
+
+.icon-animation {
+    position: relative;
+    display: none;
+
+}
+
+.selectors img:active {
+    border-style: solid;
+}
